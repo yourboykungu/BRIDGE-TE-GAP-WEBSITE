@@ -4,6 +4,7 @@ import Header from "../components/Header.jsx";
 import Home from "../pages/Home.jsx";
 import SignUp from "../pages/SignUp.jsx";
 import SignIn from "../pages/SignIn.jsx";
+import Institutions from "../pages/Institutions.jsx";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
-
+        <Route path="/institutions" element={<Institutions />} />
       </Routes>
       </BrowserRouter>
     </div>

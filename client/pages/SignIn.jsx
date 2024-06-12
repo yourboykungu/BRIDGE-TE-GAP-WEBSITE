@@ -5,7 +5,7 @@ import { Link,useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   return (
-    <div className=" min-h-screen w-full flex flex-row gap-2 mt-20 pt-2">
+    <div className=" min-h-screen w-full flex flex-row gap-2  pt-2">
               
         <div className="bg-white rounded-xl mx-auto h-fit py-4 w-3/4 md:w-1/2">
         <h1 className="text-3xl font-bold underline text-center mb-4 uppercase"><span className='text-header'>SIGN</span> in </h1>

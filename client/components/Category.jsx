@@ -5,7 +5,7 @@ export default function Category({ title }) {
     <div>
         <div className="flex flex-row gap-2 m-1 p-1">
               <input type="checkbox" />
-              <label htmlFor="" className="capitalize">{title}</label>
+              <label htmlFor="" className="capitalize m-0">{title}</label>
             </div>
     </div>
   )

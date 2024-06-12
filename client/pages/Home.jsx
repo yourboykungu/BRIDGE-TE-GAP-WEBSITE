@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header.jsx'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <>
@@ -44,7 +44,7 @@ export default function Home() {
           <div className="features-post second-features">
             <div className="features-content">
               <div className="content-show">
-                <h4><i className="fa fa-graduation-cap" />Institutions</h4>
+               <Link to="/institutions"><h4><i className="fa fa-graduation-cap" />Institutions</h4></Link> 
               </div>
               <div className="content-hide">
                 <p>Finding the right institution to develop your digital skills is essential for your growth and success.Here's a list of carefully selected institutions offering a wide range of training programs.</p>
