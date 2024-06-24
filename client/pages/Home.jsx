@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header.jsx'
 import { Link } from 'react-router-dom';
+import  Card  from '../components/Card.course.jsx';
 export default function Home() {
   return (
     <>
@@ -81,149 +82,29 @@ export default function Home() {
             <h2>Choose Your Course</h2>
           </div>
         </div>
-        <div className="owl-carousel owl-theme">
-          <div className="item">
-            <img src="assets/images/courses-01.jpg" alt="Course #1" />
-            <div className="down-content">
-              <h4>Digital Marketing</h4>
-              <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div className="author-image">
-                <img src="assets/images/author-01.png" alt="Author 1" />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-02.jpg" alt="Course #2" />
-            <div className="down-content">
-              <h4>Business World</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div className="author-image">
-                <img src="assets/images/author-02.png" alt="Author 2" />
-              </div>
-              <div className="text-button-free">
-                <a href="#">Free <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-03.jpg" alt="Course #3" />
-            <div className="down-content">
-              <h4>Media Technology</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div className="author-image">
-                <img src="assets/images/author-03.png" alt="Author 3" />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-04.jpg" alt="Course #4" />
-            <div className="down-content">
-              <h4>Communications</h4>
-              <p>Download free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div className="author-image">
-                <img src="assets/images/author-04.png" alt="Author 4" />
-              </div>
-              <div className="text-button-free">
-                <a href="#">Free <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-05.jpg" alt />
-            <div className="down-content">
-              <h4>Business Ethics</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div className="author-image">
-                <img src="assets/images/author-05.png" alt />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-01.jpg" alt />
-            <div className="down-content">
-              <h4>Photography</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div className="author-image">
-                <img src="assets/images/author-01.png" alt />
-              </div>
-              <div className="text-button-free">
-                <a href="#">Free <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-02.jpg" alt />
-            <div className="down-content">
-              <h4>Web Development</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div className="author-image">
-                <img src="assets/images/author-02.png" alt />
-              </div>
-              <div className="text-button-free">
-                <a href="#">Free <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-03.jpg" alt />
-            <div className="down-content">
-              <h4>Learn HTML CSS</h4>
-              <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
-              <div className="author-image">
-                <img src="assets/images/author-03.png" alt />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-04.jpg" alt />
-            <div className="down-content">
-              <h4>Social Media</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div className="author-image">
-                <img src="assets/images/author-04.png" alt />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-05.jpg" alt />
-            <div className="down-content">
-              <h4>Digital Arts</h4>
-              <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
-              <div className="author-image">
-                <img src="assets/images/author-05.png" alt />
-              </div>
-              <div className="text-button-free">
-                <a href="#">Free <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="assets/images/courses-01.jpg" alt />
-            <div className="down-content">
-              <h4>Media Streaming</h4>
-              <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
-              <div className="author-image">
-                <img src="assets/images/author-01.png" alt />
-              </div>
-              <div className="text-button-pay">
-                <a href="#">Pay <i className="fa fa-angle-double-right" /></a>
-              </div>
-            </div>
+        <div >
+          <div className="flex flex-row justify-between items-center">
+          <Card 
+      title='Cloud computing'
+      imageUrl="../images/cloud-computing.jpg" 
+      body='
+      The delivery of various services over the internet, including storage, computing power, and applications. It allows users to access and use technology resources on demand, without needing to manage physical hardware or infrastructure. Cloud computing offers flexibility, scalability, and cost-efficiency, enabling individuals and businesses to utilize powerful computing resources from remote data centers. Examples include services like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.'
+      />
+      <Card 
+      title='Artificial intelligence'
+      imageUrl="../images/ai.jpg"
+      body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
+      />
+      <Card 
+      title='Digital marketing'
+      imageUrl="../images/digital marketing.jpg"
+      body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+      />
+      <Card 
+      title='Mobile application'
+      imageUrl="../images/mobile application.jpg"
+      body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
+      />
           </div>
         </div>
       </div>
@@ -281,9 +162,8 @@ export default function Home() {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <p><i className="fa fa-copyright" /> Copyright 2020 by Grad School  
-            | Design: <a href="https://templatemo.com" rel="sponsored" target="_parent">TemplateMo</a><br />
-            Distributed By: <a href="https://themewagon.com" rel="sponsored" target="_blank">ThemeWagon</a>
+          <p><i className="fa fa-copyright" /> Copyright 2024 by bridge the gap  
+      
           </p>
         </div>
       </div>

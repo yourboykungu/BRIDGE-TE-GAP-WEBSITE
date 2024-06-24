@@ -5,6 +5,7 @@ import Home from "../pages/Home.jsx";
 import SignUp from "../pages/SignUp.jsx";
 import SignIn from "../pages/SignIn.jsx";
 import Institutions from "../pages/Institutions.jsx";
+import Description from "../pages/description.jsx";
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/institutions" element={<Institutions />} />
+        <Route path="/institutions" element={<Description/>} />
+
       </Routes>
       </BrowserRouter>
     </div>

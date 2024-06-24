@@ -17,6 +17,14 @@ export default function SignUp() {
           id="username"
          // onChange={handleChange}
         />
+         <input
+          type="number"
+          placeholder="phone number"
+          className="border p-3 rounded-xl w-1/2 mx-auto"
+
+          id="number"
+         // onChange={handleChange}
+        />
         <input
           type="email"
           placeholder="email"

@@ -21,38 +21,48 @@ export default function Institutions() {
       <Card 
       title='JKUAT'
       imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
+      
       Url= 'https://www.jkuat.ac.ke/'
       />
        <Card 
-      title='JKUAT'
+      title='Agmond international Limited'
       imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
+      />
+        <Card 
+      title='Emobilis'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
       />
        <Card 
-      title='JKUAT'
+      title='don bosco tech'
       imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      /> <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
       />
        <Card 
-      title='JKUAT'
+      title='tinker education'
       imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
       />
        <Card 
-      title='JKUAT'
+      title='aldai technical training institute'
       imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
+      />
+       <Card 
+      title='computer pride'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
+      />
+       <Card 
+      title='wote ttc'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
+      />
+       <Card 
+      title='kaiboi national polytechnic'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
+      />
+       <Card 
+      title='Kenya institute of proffesional studies'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
+      />
+       <Card 
+      title='matili technical'
+      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
       />
         </div>
       </div>
