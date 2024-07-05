@@ -28,7 +28,7 @@ export default function Home() {
           <div className="features-post">
             <div className="features-content">
               <div className="content-show">
-                <Link to="/digital-skills"><h4><i className="fa fa-pencil" />Digital skills </h4></Link>
+                <Link to="/digital-skills" className='no-underline'><h4><i className="fa fa-pencil" />Digital skills </h4></Link>
               </div>
               <div className="content-hide">
                 <p>Welcome to our digital skills hub! Explore and choose the skills that align with your goals. </p>
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="features-post second-features">
             <div className="features-content">
               <div className="content-show">
-               <Link to="/institutions"><h4><i className="fa fa-graduation-cap" />Institutions</h4></Link> 
+               <Link to="/institutions" className='no-underline'><h4><i className="fa fa-graduation-cap " />Institutions</h4></Link> 
               </div>
               <div className="content-hide">
                 <p>Finding the right institution to develop your digital skills is essential for your growth and success.Here's a list of carefully selected institutions offering a wide range of training programs.</p>
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="features-post third-features">
             <div className="features-content">
               <div className="content-show">
-                <h4><i className="fa fa-book" />Brief description</h4>
+                <h4><i className="fa fa-book" />online certifications</h4>
               </div>
               <div className="content-hide">
                 <p> Our goal is to make it easy for people to see what's out there and find the perfect training to boost their digital skills. We'll show you where to go and what each place offers, so you can pick the training that suits you best and level up your digital game!</p>

@@ -36,11 +36,6 @@ const cardsData = [
     body: 'A relational database management system developed by Oracle Corporation...'
   },
   {
-    title: 'Oracle database',
-    imageUrl: "../images/Oracle database.jpg",
-    body: 'A relational database management system developed by Oracle Corporation...'
-  },
-  {
     title: 'Data analyst',
     imageUrl: "../images/data analyst.jpg",
     body: 'Professionals who collect, analyze, and interpret data...'
