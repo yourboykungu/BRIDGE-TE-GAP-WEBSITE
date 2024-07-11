@@ -1,61 +1,104 @@
+import React, { useState, useEffect } from "react";
 import Card from "../components/Card.course.jsx";
-import Category from "../components/Category.jsx"
+import { useGetInstitutions } from "../api/InstitutionApi.js";
+
 export default function Institutions() {
+  const { institutions, isLoading, error, refetch, isRefetching } =
+    useGetInstitutions();
+
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const handleCategoryChange = (event) => {
+    const { value, checked } = event.target;
+
+    if (checked) {
+      setSelectedCategories((prevCategories) => [...prevCategories, value]);
+    } else {
+      setSelectedCategories((prevCategories) =>
+        prevCategories.filter((cat) => cat !== value)
+      );
+    }
+  };
+
+  useEffect(() => {
+    refetch(selectedCategories); // Trigger refetch whenever selectedCategories changes
+  }, [selectedCategories, refetch]);
+
+  if (isLoading || isRefetching) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!Array.isArray(institutions) || institutions.length === 0) {
+    return <div>No institutions found.</div>;
+  }
+
   return (
-    <div className=" min-h-screen w-full flex flex-row gap-2 pt-2">
-      <div className="bg-white  w-48 rounded-lg mx-2">
-        <h2 className="text-lg m-1 p-1">filter by :</h2>
-        <div className="flex flex-col border-t-2  border-slate-200">
-            <Category title="universities"/>
-            <Category title="private institutions"/>
-            <Category title="TVET"/>
-            
-            <div>
-            <button className="bg-black text-white py-3 px-5 rounded-lg m-3">view more</button>
-          </div>
+    <div className="min-h-screen w-full flex flex-row gap-2 pt-2">
+      <div className="bg-white w-48 rounded-lg mx-2">
+        <h2 className="text-lg m-1 p-1">Filter by:</h2>
+        <form className="flex flex-col border-t-2 border-slate-200">
+          <label className="flex items-center m-2">
+            <input
+              type="checkbox"
+              value="university"
+              onChange={handleCategoryChange}
+              checked={selectedCategories.includes("university")}
+            />
+            <span className="ml-2">Universities</span>
+          </label>
+          <label className="flex items-center m-2">
+            <input
+              type="checkbox"
+              value="private"
+              onChange={handleCategoryChange}
+              checked={selectedCategories.includes("private")}
+            />
+            <span className="ml-2">Private Institutions</span>
+          </label>
+          <label className="flex items-center m-2">
+            <input
+              type="checkbox"
+              value="tvet"
+              onChange={handleCategoryChange}
+              checked={selectedCategories.includes("tvet")}
+            />
+            <span className="ml-2">TVET</span>
+          </label>
+        </form>
+        <div>
+          <button className="bg-black text-white py-3 px-5 rounded-lg m-3">
+            View More
+          </button>
         </div>
       </div>
-      <div className="bg-white flex-1 rounded-lg ">
-        <h2 className="text-lg capitalize font-semibold p-2 mb-1 inline-block">institutions </h2>
-        <div className="flex flex-wrap gap-2 border-t-2  border-slate-200  items-center p-4" >
-      <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      Url= 'https://www.jkuat.ac.ke/'
-      />
-       <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      />
-       <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      /> <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      />
-       <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      />
-       <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      body='
-      Jomo Kenyatta University of Agriculture and Technology (JKUAT) is a public university in Kenya known for its focus on agriculture, technology, and engineering disciplines. Established in 1981, it offers a wide range of undergraduate and postgraduate programs in fields such as agriculture, engineering, computer science, business, and health sciences. JKUAT is committed to research, innovation, and community engagement, contributing significantly to Kenyas development in various sectors.'
-      />
+      <div className="bg-white flex-1 rounded-lg">
+        <h2 className="text-lg capitalize font-semibold p-2 mb-1 inline-block">
+          Institutions
+        </h2>
+        <div className="flex flex-wrap gap-2 border-t-2 border-slate-200 items-center p-4">
+          {institutions
+            .filter((institution) => {
+              if (selectedCategories.length === 0) {
+                return true; // No filters selected, show all
+              } else {
+                return selectedCategories.includes(institution.category);
+              }
+            })
+            .map((institution) => (
+              <Card
+                key={institution._id}
+                title={institution.fullName}
+                imageUrl={institution.imageUrl}
+                body={institution.description}
+                Url={institution.websiteUrl}
+              />
+            ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
