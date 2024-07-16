@@ -11,13 +11,13 @@ export default function Institutions() {
   const handleCategoryChange = (event) => {
     const { value, checked } = event.target;
 
-    if (checked) {
-      setSelectedCategories((prevCategories) => [...prevCategories, value]);
-    } else {
-      setSelectedCategories((prevCategories) =>
-        prevCategories.filter((cat) => cat !== value)
-      );
-    }
+    setSelectedCategories((prevCategories) => {
+      if (checked && !prevCategories.includes(value)) {
+        return [...prevCategories, value];
+      } else {
+        return prevCategories.filter((cat) => cat !== value);
+      }
+    });
   };
 
   useEffect(() => {
