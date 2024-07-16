@@ -75,13 +75,64 @@ export default function Home() {
   {/*
 */}
   <section className="section courses" data-section="section4">
+    
     <div className="container-fluid">
+    <h3 className='text-white text-center py-10'> Explore courses</h3>
+  <div className=' text-white py- flex flex-col gap-2 flex-wrap h-56 px-60'>
+         
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Web Design</button>
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Cloud computing</button>
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Digital marketing</button>
+         
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700 '>Programming</button>
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Data Science</button> 
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Cybersecurity</button>
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Machine Learning</button>
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700'>Graphic design</button> 
+          <button className='bg-slate-500 p-3 rounded-lg w-66 hover:bg-blue-950 focus:outline-none focus:ring focus:ring-blue-800 active:bg-blue-700 '>Web Development</button>
+         
+         
+  </div>
+    
+
       <div className="row">
         <div className="col-md-12">
           <div className="section-heading">
             <h2>Choose Your Course</h2>
           </div>
         </div>
+        <div >
+          <div className="flex flex-row justify-between items-center my-8">
+          <Card 
+      title='Cloud computing'
+      imageUrl="../images/cloud-computing.jpg" 
+      body='
+      The delivery of various services over the internet, including storage, computing power, and applications. It allows users to access and use technology resources on demand, without needing to manage physical hardware or infrastructure. Cloud computing offers flexibility, scalability, and cost-efficiency, enabling individuals and businesses to utilize powerful computing resources from remote data centers. Examples include services like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.'
+      />
+      <Card 
+      title='Artificial intelligence'
+      imageUrl="../images/ai.jpg"
+      body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
+      />
+      <Card 
+      title='Digital marketing'
+      imageUrl="../images/digital marketing.jpg"
+      body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+      />
+      <Card 
+      title='Digital marketing'
+      imageUrl="../images/digital marketing.jpg"
+      body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+      />
+      <Card 
+      title='Mobile application'
+      imageUrl="../images/mobile application.jpg"
+      body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
+      />
+          </div>
+          
+        </div>
+
         <div >
           <div className="flex flex-row justify-between items-center">
           <Card 
@@ -101,11 +152,17 @@ export default function Home() {
       body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
       />
       <Card 
+      title='Digital marketing'
+      imageUrl="../images/digital marketing.jpg"
+      body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+      />
+      <Card 
       title='Mobile application'
       imageUrl="../images/mobile application.jpg"
       body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
       />
           </div>
+          
         </div>
       </div>
     </div>
