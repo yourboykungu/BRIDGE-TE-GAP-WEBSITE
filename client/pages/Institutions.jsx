@@ -1,102 +1,97 @@
-import React, { useState, useEffect } from "react";
-import Card from "../components/Card.course.jsx";
-import { useGetInstitutions } from "../api/InstitutionApi.js";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Card from "../components/Card.institution.jsx";
 
 export default function Institutions() {
-  const { institutions, isLoading, error, refetch, isRefetching } =
-    useGetInstitutions();
-
-  const [selectedCategories, setSelectedCategories] = useState([]);
-
-  const handleCategoryChange = (event) => {
-    const { value, checked } = event.target;
-
-    setSelectedCategories((prevCategories) => {
-      if (checked && !prevCategories.includes(value)) {
-        return [...prevCategories, value];
-      } else {
-        return prevCategories.filter((cat) => cat !== value);
-      }
-    });
-  };
+  const [selectedInstitutionType, setSelectedInstitutionType] = useState('');
+  const [cards, setCards] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    refetch(selectedCategories); // Trigger refetch whenever selectedCategories changes
-  }, [selectedCategories, refetch]);
+    const searchParams = new URLSearchParams(location.search);
+    const institutionType = searchParams.get('institutionType') || '';
+    setSelectedInstitutionType(institutionType);
 
-  if (isLoading || isRefetching) {
-    return <div>Loading...</div>;
-  }
+    // Fetch data from the backend
+    fetchData(institutionType);
+  }, [location]);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const fetchData = (institutionType) => {
+    const url = institutionType 
+      ? `http://localhost:3000/api/institutions?institutionType=${institutionType}` 
+      : `http://localhost:3000/api/institutions`;
+    
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Fetched data:", data); // Debug log
+        setCards(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  };
 
-  if (!Array.isArray(institutions) || institutions.length === 0) {
-    return <div>No institutions found.</div>;
-  }
+  const handleCheckboxChange = (institutionType) => {
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.get('institutionType') === institutionType) {
+      searchParams.delete('institutionType');
+    } else {
+      searchParams.set('institutionType', institutionType);
+    }
+    navigate({ search: searchParams.toString() });
+  };
 
   return (
     <div className="min-h-screen w-full flex flex-row gap-2 pt-2">
-      <div className="bg-white w-48 rounded-lg mx-2">
-        <h2 className="text-lg m-1 p-1">Filter by:</h2>
-        <form className="flex flex-col border-t-2 border-slate-200">
-          <label className="flex items-center m-2">
-            <input
-              type="checkbox"
-              value="university"
-              onChange={handleCategoryChange}
-              checked={selectedCategories.includes("university")}
-            />
-            <span className="ml-2">Universities</span>
-          </label>
-          <label className="flex items-center m-2">
-            <input
-              type="checkbox"
-              value="private"
-              onChange={handleCategoryChange}
-              checked={selectedCategories.includes("private")}
-            />
-            <span className="ml-2">Private Institutions</span>
-          </label>
-          <label className="flex items-center m-2">
-            <input
-              type="checkbox"
-              value="tvet"
-              onChange={handleCategoryChange}
-              checked={selectedCategories.includes("tvet")}
-            />
-            <span className="ml-2">TVET</span>
-          </label>
-        </form>
-        <div>
-          <button className="bg-black text-white py-3 px-5 rounded-lg m-3">
-            View More
-          </button>
+      <div className="bg-white w-48 rounded-lg mx-2 h-fit pb-4">
+        <h2 className="text-lg capitalize font-semibold m-1 p-1">institution Category :</h2>
+        <div className="flex flex-col border-t-2 border-slate-200">
+          <div className='flex flex-col p-2'>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'University'}
+                onChange={() => handleCheckboxChange('University')}
+              />
+              Universities
+            </label>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'private'}
+                onChange={() => handleCheckboxChange('private')}
+              />
+              Private Institutions
+            </label>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'TVET'}
+                onChange={() => handleCheckboxChange('TVET')}
+              />
+              TVET
+            </label>
+          </div>
         </div>
       </div>
       <div className="bg-white flex-1 rounded-lg">
-        <h2 className="text-lg capitalize font-semibold p-2 mb-1 inline-block">
-          Institutions
-        </h2>
+        <h2 className="text-lg capitalize font-semibold p-2 mb-1 inline-block">institutions </h2>
         <div className="flex flex-wrap gap-2 border-t-2 border-slate-200 items-center p-4">
-          {institutions
-            .filter((institution) => {
-              if (selectedCategories.length === 0) {
-                return true; // No filters selected, show all
-              } else {
-                return selectedCategories.includes(institution.category);
-              }
-            })
-            .map((institution) => (
+          {Array.isArray(cards) && cards.length > 0 ? (
+            cards.map((card, index) => (
               <Card
-                key={institution._id}
-                title={institution.fullName}
-                imageUrl={institution.imageUrl}
-                body={institution.description}
-                Url={institution.websiteUrl}
+                key={index}
+                title={card.fullName}
+                imageUrl={card.imageUrl}
+                type={card.type}
+                Url={card.websiteUrl}
               />
-            ))}
+            ))
+          ) : (
+            <p>No institutions found</p>
+          )}
         </div>
       </div>
     </div>
