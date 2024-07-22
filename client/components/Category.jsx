@@ -26,3 +26,4 @@ export default function Category({ title, onCheckboxChange }) {
     </div>
   );
 }
+

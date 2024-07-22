@@ -39,7 +39,7 @@ p {
 
 .section-heading {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .section-heading h2:before {
@@ -122,7 +122,7 @@ a.menu-link { display: none; }
     padding: 15px 0px;
     border-bottom: 1px solid rgba(250,250,250,0.25);
     text-align: center;
-    color:rgb(17, 16, 16));
+    color:rgb(17, 16, 16);
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 700;
@@ -291,10 +291,21 @@ a.menu-link { display: none; }
 
 .main-banner {
   position: relative;
-  max-height: 70%;
+  background-image: url('assets/images/Blue Futuristic Technology Presentation (1).jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /*max-height: 70%;*/
   overflow: hidden;
-  margin-bottom: -7px;
-  height: 800px;
+  /*margin-bottom: -7px;
+  height: 600px;*/
+  width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #bg-video {
@@ -318,6 +329,11 @@ a.menu-link { display: none; }
     left: 0;
     bottom: 7px;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }*/
 
 .main-banner .caption {
@@ -465,6 +481,13 @@ section.features .col-4 {
 @media screen and (max-width: 767px) {
 
   .features-content {
+     /* position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0c1228;
+    color: #fff;
+    padding: 40px;*/
     padding: 15px;
   }
   .features-content h4 i {

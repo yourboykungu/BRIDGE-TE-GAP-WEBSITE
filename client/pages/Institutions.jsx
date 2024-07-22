@@ -1,71 +1,99 @@
-import Card from "../components/Card.course.jsx";
-import Category from "../components/Category.jsx"
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Card from "../components/Card.institution.jsx";
+
 export default function Institutions() {
+  const [selectedInstitutionType, setSelectedInstitutionType] = useState('');
+  const [cards, setCards] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const institutionType = searchParams.get('institutionType') || '';
+    setSelectedInstitutionType(institutionType);
+
+    // Fetch data from the backend
+    fetchData(institutionType);
+  }, [location]);
+
+  const fetchData = (institutionType) => {
+    const url = institutionType 
+      ? `http://localhost:3000/api/institutions?institutionType=${institutionType}` 
+      : `http://localhost:3000/api/institutions`;
+    
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Fetched data:", data); // Debug log
+        setCards(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  };
+
+  const handleCheckboxChange = (institutionType) => {
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.get('institutionType') === institutionType) {
+      searchParams.delete('institutionType');
+    } else {
+      searchParams.set('institutionType', institutionType);
+    }
+    navigate({ search: searchParams.toString() });
+  };
+
   return (
-    <div className=" min-h-screen w-full flex flex-row gap-2 pt-2">
-      <div className="bg-white  w-48 rounded-lg mx-2">
-        <h2 className="text-lg m-1 p-1">filter by :</h2>
-        <div className="flex flex-col border-t-2  border-slate-200">
-            <Category title="universities"/>
-            <Category title="private institutions"/>
-            <Category title="TVET"/>
-            
-            <div>
-            <button className="bg-black text-white py-3 px-5 rounded-lg m-3">view more</button>
+    <div className="min-h-screen w-full flex flex-row gap-2 pt-2">
+      <div className="bg-white w-48 rounded-lg mx-2 h-fit pb-4">
+        <h2 className="text-lg capitalize font-semibold m-1 p-1">institution Category :</h2>
+        <div className="flex flex-col border-t-2 border-slate-200">
+          <div className='flex flex-col p-2'>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'University'}
+                onChange={() => handleCheckboxChange('University')}
+              />
+              Universities
+            </label>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'private'}
+                onChange={() => handleCheckboxChange('private')}
+              />
+              Private Institutions
+            </label>
+            <label className='flex flex-row gap-2'>
+              <input
+                type="checkbox"
+                checked={selectedInstitutionType === 'TVET'}
+                onChange={() => handleCheckboxChange('TVET')}
+              />
+              TVET
+            </label>
           </div>
         </div>
       </div>
-      <div className="bg-white flex-1 rounded-lg ">
+      <div className="bg-white flex-1 rounded-lg">
         <h2 className="text-lg capitalize font-semibold p-2 mb-1 inline-block">institutions </h2>
-        <div className="flex flex-wrap gap-2 border-t-2  border-slate-200  items-center p-4" >
-      <Card 
-      title='JKUAT'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      
-      Url= 'https://www.jkuat.ac.ke/'
-      />
-       <Card 
-      title='Agmond international Limited'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-        <Card 
-      title='Emobilis'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='don bosco tech'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='tinker education'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='aldai technical training institute'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='computer pride'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='wote ttc'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='kaiboi national polytechnic'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='Kenya institute of proffesional studies'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
-       <Card 
-      title='matili technical'
-      imageUrl="https://imgs.search.brave.com/GjZyCzUGTUKYlMUMogIlcjC-4Z_T7H6sEsi6oWrHxZM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzlhL0pLVUFULU1h/aW4tQ2FtcHVzLUdh/dGUtQS5qcGc" 
-      />
+        <div className="flex flex-wrap gap-2 border-t-2 border-slate-200 items-center p-4">
+          {Array.isArray(cards) && cards.length > 0 ? (
+            cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.fullName}
+                imageUrl={card.imageUrl}
+                type={card.type}
+                Url={card.websiteUrl}
+              />
+            ))
+          ) : (
+            <p>No institutions found</p>
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }

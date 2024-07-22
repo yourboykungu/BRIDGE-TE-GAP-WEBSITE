@@ -32,7 +32,7 @@ export default function Header() {
 </header>
 */}
 
-<header className='bg-white p-4  flex justify-between items-center'>
+<header className='bg-white p-4  flex justify-between items-center h-20'>
   <h1 className='text-4xl font-bold'><span className='text-header'>BRIDGE</span> THE GAP</h1>
 
   <div>
