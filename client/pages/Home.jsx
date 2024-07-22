@@ -136,40 +136,40 @@ export default function Home() {
                  
               </div>
               <div className="flex justify-center m-0">
-  <div className="grid grid-cols-3 gap-3 p-0 ">
+  <div className="grid gap-2 p-2 grid-cols-1 md:grid-cols-3 ">
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Digital marketing</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Digital marketing</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Programming</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Programming</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Mobile App development</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Mobile App development</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Graphic design</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Graphic design</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Data analytics</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Data analytics</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Oracle development</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Oracle development</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Cloud computing</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Cloud computing</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Web development</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Web development</button>
     </div>
     <div className="flex justify-center">
-      <button className="flex-1 rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Programming</button>
+      <button className="w-full max-w-xs rounded-lg bg-blue-950 px-24 py-3 text-white hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-800">Coding</button>
     </div>
   </div>
 </div>
 
               <div >
-          <div className="grid grid-cols-4 gap-4 my-8 w-100 h-25 p-2 mx-4">
-        <div className="w-48 h-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-8 p-2 mx-4">
+        <div className="flex justify-center">
         <Card 
         title='Cloud Computing'
          subtitle='alxafrica'
@@ -179,6 +179,7 @@ export default function Home() {
          url='https://www.alxafrica.com/programme/aws-cloud-computing/'
         />
         </div>
+        <div className="flex justify-center">
         <Card 
         title='Artificial intelligence'
         subtitle='Ai Kenya'
@@ -186,6 +187,8 @@ export default function Home() {
         body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
          url='https://kenya.ai/learning/'
         />
+        </div>
+        <div className="flex justify-center">
         <Card 
         title='DataScience'
          subtitle='Strathmore'
@@ -193,6 +196,8 @@ export default function Home() {
         body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
          url='https://strathmore.edu/?s=data+analytics'
         />
+        </div>
+        <div className="flex justify-center">
         <Card
         title='Computer Science'
          subtitle='Jomo Kenyatta University of Agriculture and Technology'
@@ -200,6 +205,8 @@ export default function Home() {
         body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
          url='http://website.jkuat.ac.ke/college/copas/?page_id=17353'
         />
+        </div>
+        <div className="flex justify-center">
         <Card 
         title='Computer Technology'
          subtitle='Jomo Kenyatta University of Agriculture and Technology'
@@ -208,6 +215,8 @@ export default function Home() {
         The delivery of various services over the internet, including storage, computing power, and applications. It allows users to access and use technology resources on demand, without needing to manage physical hardware or infrastructure. Cloud computing offers flexibility, scalability, and cost-efficiency, enabling individuals and businesses to utilize powerful computing resources from remote data centers. Examples include services like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.'
         url='http://website.jkuat.ac.ke/college/copas/?page_id=17355#:~:text=The%20course%20is%20designed%20to,found%20in%20few%20other%20courses.'
        />
+       </div>
+       <div className="flex justify-center">
         <Card 
         title='Cyber security'
          subtitle='Moringa School'
@@ -215,6 +224,8 @@ export default function Home() {
         body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
          url='https://moringaschool.com/courses/cybersecurity-prep/'
         />
+        </div>
+        <div className="flex justify-center">
         <Card 
         title='Internet of Things'
          subtitle='Computer Pride'
@@ -222,6 +233,8 @@ export default function Home() {
         body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
         url='https://computer-pride.co.ke/courses/internet-of-things/'
        />
+       </div>
+       <div className="flex justify-center">
         <Card
         title='Web Development'
          subtitle='eMobilis'
@@ -229,6 +242,7 @@ export default function Home() {
         body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
         url='https://www.emobilis.ac.ke/courses'
        />
+       </div>
           </div>
         </div>
       </div>
