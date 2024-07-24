@@ -59,14 +59,14 @@ export default function Home() {
 
 
     <div className="flex justify-center">
-    <a href="https://www.coursera.org/certificates" target="_blank" rel="noopener noreferrer">
+    <Link to="/certification">
       <button className="rounded-lg bg-blue-950 px-24 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
       <h4>
            <i className="fa fa-book" />
              Online Certifications
       </h4>
       </button>
-    </a>
+    </Link>
     </div>
     </div>
     </div>
