@@ -73,7 +73,7 @@ export default function Course() {
               <Card
                 title={card.name}
                 imageUrl={card.imageUrl}
-                body={card.body}
+                description={card.description}
               />
             ))
           ) : (

@@ -5,6 +5,7 @@
     "bootstrap": "^5.3.3",
     "leaflet": "^1.9.4",
     "leaflet-control-geocoder": "^2.4.0",
+    "lucide-react": "^0.414.0",
     "react-bootstrap": "^2.10.2"
   }
 }

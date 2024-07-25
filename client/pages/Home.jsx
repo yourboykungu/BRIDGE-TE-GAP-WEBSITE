@@ -20,56 +20,58 @@ export default function Home() {
             className="w-full h-auto max-h-[740px] object-cover"
           />
           <div className="video-overlay header-text">
-            <div className="caption">
-              <h2>
-                <em>Bridge </em> the Gap
-              </h2>
-              <h6>Discover, Learn and Grow</h6>
-              <br />
-              <div className="main-button">
-                <div className="scroll-to-section">
-                  <a href="#section2">Discover more</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="caption text-center">
+    <h2 className="text-xl md:text-2xl lg:text-4xl">
+      <em>Bridge </em> the Gap
+    </h2>
+    <h6 className="text-sm md:text-lg lg:text-xl">
+      Discover, Learn and Grow
+    </h6>
+    <br />
+    <div className="main-button">
+      <div className="scroll-to-section">
+        <a href="#section2" className="text-sm md:text-base lg:text-lg">Discover more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
           <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-0">
-  <div className="grid grid-cols-3 gap-3 px-4 ">
+  <div className="hidden md:grid grid-cols-3 gap-3 px-4">
     <div className="flex justify-center">
-    <Link to="/digital-skills">
-      <button className="rounded-lg bg-blue-950 px-28 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
-      <h4>
-              <i className="fa fa-pencil" />
-              Digital skills
-            </h4>
-            </button>
-            </Link>
+      <Link to="/digital-skills">
+        <button className="rounded-lg bg-blue-950 px-28 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
+          <h4>
+            <i className="fa fa-pencil" />
+            Digital skills
+          </h4>
+        </button>
+      </Link>
     </div>
     
     <div className="flex justify-center">
-       <Link to="/institutions">
-      <button className="rounded-lg bg-blue-950 px-28 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
-      <h4>
-        <i className="fa fa-graduation-cap" />
-         Institutions
-       </h4>
-      </button>
+      <Link to="/institutions">
+        <button className="rounded-lg bg-blue-950 px-28 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
+          <h4>
+            <i className="fa fa-graduation-cap" />
+            Institutions
+          </h4>
+        </button>
       </Link>
     </div>
 
-
     <div className="flex justify-center">
-    <Link to="/certification">
-      <button className="rounded-lg bg-blue-950 px-24 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
-      <h4>
-           <i className="fa fa-book" />
-             Online Certifications
-      </h4>
-      </button>
-    </Link>
+      <a href="https://www.coursera.org/certificates" target="_blank" rel="noopener noreferrer">
+        <button className="rounded-lg bg-blue-950 px-24 py-12 text-white hover:bg-[#ffc107] focus:outline-none focus:ring focus:ring-blue-400 active:bg-blue-900">
+          <h4>
+            <i className="fa fa-book" />
+            Online Certifications
+          </h4>
+        </button>
+      </a>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
     
        {/*} <section className="features container row-cols-3 gx-3">
           <div >
@@ -174,7 +176,7 @@ export default function Home() {
         title='Cloud Computing'
          subtitle='alxafrica'
         imageUrl="../images/cloud-computing.jpg" 
-        body='
+        description='
         The delivery of various services over the internet, including storage, computing power, and applications. It allows users to access and use technology resources on demand, without needing to manage physical hardware or infrastructure. Cloud computing offers flexibility, scalability, and cost-efficiency, enabling individuals and businesses to utilize powerful computing resources from remote data centers. Examples include services like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.'
          url='https://www.alxafrica.com/programme/aws-cloud-computing/'
         />
@@ -184,7 +186,7 @@ export default function Home() {
         title='Artificial intelligence'
         subtitle='Ai Kenya'
         imageUrl="../images/ai.jpg"
-        body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
+        description='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
          url='https://kenya.ai/learning/'
         />
         </div>
@@ -193,7 +195,7 @@ export default function Home() {
         title='DataScience'
          subtitle='Strathmore'
         imageUrl="../images/data analyst.jpg"
-        body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+        description='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
          url='https://strathmore.edu/?s=data+analytics'
         />
         </div>
@@ -202,7 +204,7 @@ export default function Home() {
         title='Computer Science'
          subtitle='Jomo Kenyatta University of Agriculture and Technology'
         imageUrl="../images/compsc.jpg"
-        body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
+        description='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
          url='http://website.jkuat.ac.ke/college/copas/?page_id=17353'
         />
         </div>
@@ -211,7 +213,7 @@ export default function Home() {
         title='Computer Technology'
          subtitle='Jomo Kenyatta University of Agriculture and Technology'
         imageUrl="../images/compt.jpg" 
-        body='
+        description='
         The delivery of various services over the internet, including storage, computing power, and applications. It allows users to access and use technology resources on demand, without needing to manage physical hardware or infrastructure. Cloud computing offers flexibility, scalability, and cost-efficiency, enabling individuals and businesses to utilize powerful computing resources from remote data centers. Examples include services like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.'
         url='http://website.jkuat.ac.ke/college/copas/?page_id=17355#:~:text=The%20course%20is%20designed%20to,found%20in%20few%20other%20courses.'
        />
@@ -221,7 +223,7 @@ export default function Home() {
         title='Cyber security'
          subtitle='Moringa School'
         imageUrl="../images/cyb.jpg"
-        body='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
+        description='The simulation of human intelligence by machines, enabling them to learn, reason, and make decisions. AI includes technologies like machine learning, natural language processing, and robotics. It powers applications ranging from virtual assistants to autonomous vehicles. AI aims to automate tasks, enhance decision-making, and create smarter systems.'
          url='https://moringaschool.com/courses/cybersecurity-prep/'
         />
         </div>
@@ -230,7 +232,7 @@ export default function Home() {
         title='Internet of Things'
          subtitle='Computer Pride'
         imageUrl="../images/iot2.jpg"
-        body='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
+        description='Promoting products or services using digital channels such as social media, email, and search engines to reach and engage with potential customers.'
         url='https://computer-pride.co.ke/courses/internet-of-things/'
        />
        </div>
@@ -239,7 +241,7 @@ export default function Home() {
         title='Web Development'
          subtitle='eMobilis'
         imageUrl="../images/web.jpg"
-        body='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
+        description='Software designed to run on mobile devices such as smartphones and tablets, offering various functionalities and services to users.'
         url='https://www.emobilis.ac.ke/courses'
        />
        </div>

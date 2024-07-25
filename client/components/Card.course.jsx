@@ -1,4 +1,4 @@
-export default function Card({ title, imageUrl, body , url, subtitle}) {
+export default function Card({ title, imageUrl, description , url, subtitle}) {
   return (
     <div className='h-84 w-64'>
       <div className='h-full border rounded-lg bg-white shadow-xl hover:animate-pulseOnce transition duration-300 hover:shadow-lg overflow-hidden'>
@@ -8,11 +8,11 @@ export default function Card({ title, imageUrl, body , url, subtitle}) {
         <div className='flex flex-col m-2 gap-1 h-40'>
           <h1 className='text-xl font-bold mb-[1px]'>{title}</h1>
           {subtitle && 
-            <h2 className='text-lg font-semibold text-gray-6g00 text-sm mb-[1px]'>{subtitle}</h2> // Ensure visibility with margin
+            <h2 className=' font-semibold text-gray-600 text-sm mb-[1px]'>{subtitle}</h2> // Ensure visibility with margin
           }
           <div className='flex-grow overflow-hidden'>
             <p className='text-sm overflow-hidden text-ellipsis' style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
-              {body}
+              {description}
             </p>
           </div>
           <div className='flex-shrink-0'>
